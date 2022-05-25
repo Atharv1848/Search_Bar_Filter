@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search bar</title>
+    <style>
+        th,
+        td {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: x-large;
+            font-weight: lighter;
+            width: 500px;
+        }
+        tr:nth-last-child(odd){
+            background-color: lightgray;
+        }
+        #seach{
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-radius: 4px;
+            padding: 8px;
+            margin-left: 25px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            font-size: x-large;
+            font-weight: lighter;
+            /* border: hidden; */
+            width: 95%;
+            text-align: center;
+        }
+         #range{
+             width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="seach" placeholder="Search..." onkeyup="searchaction()">
+    <table id="table">
+        <tr>
+            <th>Names   </th>
+            <th>Subject</th>
+            <th>exam form filled</th>
+        </tr>
+        <tr>
+            <td>ayush</td>
+            <td>maths</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>avishek</td>
+            <td>science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>ankit</td>
+            <td>commerse</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+           <td>abhay</td>
+           <td>arts</td>
+           <td>yes</td>
+        </tr>
+        <tr>
+            <td>ramesh</td>
+            <td>english</td>
+            <td>yes</td>
+
+        </tr>
+        <tr>
+            <td>tanisk</td>
+            <td>maths+science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>Sameer</td>
+            <td>comupter science</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>sachin</td>
+            <td>computer science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>amit</td>
+            <td>maths</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>shashank</td>
+            <td>science</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>rohan</td>
+            <td>social science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>rahul</td>
+            <td>all</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>atharv</td>
+            <td>I.T.</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>sachindra</td>
+            <td>computer science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>naveen</td>
+            <td>computer science</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>devendra</td>
+            <td>maths</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>mayank</td>
+            <td>English</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>dev Raj</td>
+            <td>machince learning</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>gautam</td>
+            <td>python</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>mradul </td>
+            <td>java</td>
+            <td>yes</td>
+        </tr>
+
+    </table>
+
+    <script>
+        function searchaction(){
+            let f = document.getElementById('seach').value.toUpperCase();
+            let mytable = document.getElementById('table');
+            let tr = mytable.getElementsByTagName('tr');
+
+            for( let i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                console.log(td)
+
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+
+                    if(textvalue.toUpperCase().indexOf(f) > -1){
+                        tr[i].style.display= "block";
+                    } else{
+                        tr[i].style.display="none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
